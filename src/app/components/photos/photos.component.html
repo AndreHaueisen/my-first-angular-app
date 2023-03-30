@@ -1,4 +1,4 @@
 <h1>Photos</h1>
 <p>{{ title }}</p>
 
-<app-photo-item *ngFor="let photo of photos" [photo]="photo"></app-photo-item>
+<app-photo-item *ngFor="let photo of photos" [photo]="photo" (hideEmitter)="onHidePhoto($event)"></app-photo-item>

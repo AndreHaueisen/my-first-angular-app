@@ -35,5 +35,8 @@ export class PhotosComponent implements OnInit {
     ];
   }
 
+  onHidePhoto(photo: Photo): void {
+    this.photos = this.photos.filter((p) => p.id !== photo.id);
+  }
 }
 
