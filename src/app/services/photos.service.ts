@@ -2,11 +2,10 @@ import { Injectable } from '@angular/core';
 import { Photo } from '../models/photo';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PhotosService {
-
-  constructor() { }
+  constructor() {}
 
   getPhotos(): Photo[] {
     return [
