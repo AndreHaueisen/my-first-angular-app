@@ -7,10 +7,11 @@ import { PhotosComponent } from './components/photos/photos.component';
 import { PhotoItemComponent } from './components/photo-item/photo-item.component';
 import { HistoryComponent } from './components/history/history.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [AppComponent, PhotosComponent, PhotoItemComponent, HistoryComponent, NavBarComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, NgbModule],
   providers: [],
   bootstrap: [AppComponent],
 })
