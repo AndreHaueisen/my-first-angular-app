@@ -3,15 +3,15 @@ export class Photo {
     readonly id: number,
     readonly title: string,
     readonly url: string,
-    readonly author: string,
-    readonly votes: number = 0,
+    readonly thumbnailUrl: string,
+    readonly votes: number = 1,
   ) {}
 
   voteUp(): Photo {
-    return new Photo(this.id, this.title, this.url, this.author, this.votes + 1);
+    return new Photo(this.id, this.title, this.url, this.thumbnailUrl, this.votes + 1);
   }
 
   voteDown(): Photo {
-    return new Photo(this.id, this.title, this.url, this.author, this.votes - 1);
+    return new Photo(this.id, this.title, this.url, this.thumbnailUrl, this.votes - 1);
   }
 }

@@ -14,7 +14,14 @@ export class PhotosComponent implements OnInit {
   constructor(private photoService: PhotosService) {}
 
   ngOnInit(): void {
-    this.photos = this.photoService.getPhotos();
+    this.photoService.getPhotos().subscribe((photos) => {
+
+     const photosWithVotes = photos.map((photo) => {
+        return new Photo(photo.id, photo.title, photo.url, photo.thumbnailUrl, 0);
+      });
+
+      this.photos = photosWithVotes;
+    });
   }
 
   onHidePhoto(photo: Photo): void {

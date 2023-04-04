@@ -1,17 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Photo } from '../models/photo';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PhotosService {
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
-  getPhotos(): Photo[] {
-    return [
-      new Photo(1, 'Photo One', 'https://picsum.photos/id/237/200/300', 'John Doe'),
-      new Photo(2, 'Photo Two', 'https://picsum.photos/id/237/200/300', 'John Doe'),
-      new Photo(3, 'Photo Three', 'https://picsum.photos/id/237/200/300', 'John Doe'),
-    ];
+  getPhotos(): Observable<Photo[]> {
+    return this.http.get<Photo[]>('https://jsonplaceholder.typicode.com/photos?_limit=10');
   }
 }

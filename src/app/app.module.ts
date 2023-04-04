@@ -8,10 +8,11 @@ import { PhotoItemComponent } from './components/photo-item/photo-item.component
 import { HistoryComponent } from './components/history/history.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, PhotosComponent, PhotoItemComponent, HistoryComponent, NavBarComponent],
-  imports: [BrowserModule, AppRoutingModule, NgbModule],
+  imports: [BrowserModule, AppRoutingModule, NgbModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
