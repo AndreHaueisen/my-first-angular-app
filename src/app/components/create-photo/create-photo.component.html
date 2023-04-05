@@ -1,0 +1,9 @@
+<form (ngSubmit)="submitPhoto()">
+    <h1>Create a Photo</h1>
+    <input type="text" name="title" placeholder="Enter the photo's title" [(ngModel)]="title">
+    <br>
+    <textarea name="url" placeholder="Enter the photo's url" [(ngModel)]="url"></textarea>
+    <br>
+    <textarea name="thumbnailUrl" placeholder="Enter the photo's thumbnail url" [(ngModel)]="thumbnailUrl"></textarea>
+    <input type="submit" value="Submit" class="btn btn-primary">
+</form>

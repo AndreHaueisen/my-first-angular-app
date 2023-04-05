@@ -2,3 +2,5 @@
 <p>{{ title }}</p>
 
 <app-photo-item *ngFor="let photo of photos" [photo]="photo" (hideEmitter)="onHidePhoto($event)"></app-photo-item>
+<br>
+<app-create-photo (addPhotoEmitter)="onSubmitPhoto($event)"></app-create-photo>

@@ -27,4 +27,10 @@ export class PhotosComponent implements OnInit {
   onHidePhoto(photo: Photo): void {
     this.photos = this.photos.filter((p) => p.id !== photo.id);
   }
+
+  onSubmitPhoto(photo: Photo): void {
+    this.photos.unshift(photo);
+
+    alert('Photo added successfully');
+  }
 }

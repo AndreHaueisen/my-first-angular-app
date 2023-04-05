@@ -9,10 +9,12 @@ import { HistoryComponent } from './components/history/history.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { CreatePhotoComponent } from './components/create-photo/create-photo.component';
 
 @NgModule({
-  declarations: [AppComponent, PhotosComponent, PhotoItemComponent, HistoryComponent, NavBarComponent],
-  imports: [BrowserModule, AppRoutingModule, NgbModule, HttpClientModule],
+  declarations: [AppComponent, PhotosComponent, PhotoItemComponent, HistoryComponent, NavBarComponent, CreatePhotoComponent],
+  imports: [BrowserModule, AppRoutingModule, NgbModule, HttpClientModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
