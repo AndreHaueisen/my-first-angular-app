@@ -1,9 +1,36 @@
-<form (ngSubmit)="submitPhoto()">
+<form #form="ngForm" (ngSubmit)="submitPhoto()">
     <h1>Create a Photo</h1>
-    <input type="text" name="title" placeholder="Enter the photo's title" [(ngModel)]="title">
+    <input type="text" name="title" required minlength="8" maxlength="32" placeholder="Enter the photo's title" [(ngModel)]="title" #photoTitle="ngModel">
     <br>
-    <textarea name="url" placeholder="Enter the photo's url" [(ngModel)]="url"></textarea>
+    <textarea name="url" required minlength="16" placeholder="Enter the photo's url" [(ngModel)]="url" #photoUrl="ngModel"></textarea>
     <br>
     <textarea name="thumbnailUrl" placeholder="Enter the photo's thumbnail url" [(ngModel)]="thumbnailUrl"></textarea>
-    <input type="submit" value="Submit" class="btn btn-primary">
+    <br>
+    <input type="submit" [disabled]="form.invalid" value="Submit" class="btn btn-primary">
 </form>
+
+<br>
+
+<div *ngIf="photoTitle.invalid && photoTitle.dirty">
+  <div *ngIf="photoTitle.errors?.['required']">
+    Title is required
+  </div>
+  <div *ngIf="photoTitle.errors?.['minlength']">
+    Title must be at least 8 characters long
+  </div>
+    <div *ngIf="photoTitle.errors?.['maxlength']">
+        Title cannot be more than 32 characters long
+    </div>
+
+</div>
+
+<br>
+
+<div *ngIf="photoUrl.invalid && photoUrl.dirty">
+  <div *ngIf="photoUrl.errors?.['required']">
+    URL is required
+  </div>
+  <div *ngIf="photoUrl.errors?.['minlength']">
+    URL must be at least 16 characters long
+  </div>
+</div>
